@@ -1,4 +1,6 @@
 # tarea-3_mapededuce
+# Análisis de Logs Web con Hadoop MapReduce en Python
+
 ## 1. Archivo de Logs de Ejemplo (`access_log.txt`)
 
 El mismo archivo de logs que antes:
@@ -18,7 +20,7 @@ access_log.txt
 192.168.1.120 - - [10/Oct/2023:08:20:01 -0500] "GET /index.html HTTP/1.1" 200 1256
 ```
 
-## 2. Código para MapReduce (`weblog_analyzer.py`)
+## 2. Código Python para MapReduce (`weblog_analyzer.py`)
 
 ```python
 #!/usr/bin/env python3
@@ -57,7 +59,6 @@ WebLogAnalyzer.run()
 ## 3. README.md Actualizado para Python
 
 ```markdown
-# Análisis de Logs Web con Hadoop MapReduce en Python.
 ## Cómo levantar el nodo de Hadoop
 ```bash
 # Iniciar servicios HDFS y YARN
@@ -67,28 +68,6 @@ start-yarn.sh
 # Verificar servicios
 jps
 ```
-
-## Ejecutar el WebLogAnalyzer (Python)
-1. Copiar el archivo de logs a HDFS:
-```bash
-hdfs dfs -mkdir -p /weblog/input
-hdfs dfs -put access_log.txt /weblog/input
-```
-
-2. Ejecutar el análisis (modo local para pruebas):
-```bash
-python weblog_analyzer.py access_log.txt > results.txt
-```
-
-3. Ejecutar en Hadoop:
-```bash
-python weblog_analyzer.py -r hadoop hdfs:///weblog/input/access_log.txt --output-dir hdfs:///weblog/output
-```
-
-4. Ver resultados:
-```bash
-hdfs dfs -cat /weblog/output/part-00000
-```
 ## Cómo apagar el nodo de Hadoop
 ```bash
 stop-yarn.sh
@@ -97,3 +76,5 @@ stop-dfs.sh
 # Verificar que todos los procesos se detuvieron
 jps
 ```
+
+
