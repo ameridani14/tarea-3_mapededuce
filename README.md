@@ -20,7 +20,7 @@ access_log.txt
 192.168.1.120 - - [10/Oct/2023:08:20:01 -0500] "GET /index.html HTTP/1.1" 200 1256
 ```
 
-## 2. Código Python para MapReduce (`weblog_analyzer.py`)
+## 2. Código para MapReduce (`weblog_analyzer.py`)
 
 ```python
 #!/usr/bin/env python3
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 WebLogAnalyzer.run()
 ```
 
-## 3. README.md Actualizado para Python
+## 3. README.md Actualizado 
 
 ```markdown
 ## Cómo levantar el nodo de Hadoop
